@@ -29,6 +29,7 @@
   body {
     --bodyPaddingTop: 94px;
     padding-top: var(--bodyPaddingTop);
+    
   }
   @media (max-width: 800px) {
     .Menu {
@@ -38,6 +39,7 @@
     body {
       --bodyPaddingTop: 40px;
       padding-top: var(--bodyPaddingTop);
+      
     }
   }
   

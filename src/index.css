@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  background-color: black;
 }
 
 :root {
@@ -12,12 +13,14 @@
   --white: #FFFFFF;
   --frontEnd: #6BD1FF;
   --backEnd: #00C86F;
+  
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+ 
 }
 
 a {
@@ -29,4 +32,5 @@ a {
   /* background-color: aquamarine; */
   display: flex;
   flex-direction: column;
+  
 }

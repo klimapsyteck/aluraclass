@@ -15,9 +15,6 @@ ReactDOM.render(
       <Route path="/cadastro/video" component={CadastroVideo} exact />
       <Route path="/cadastro/categoria" component={CadastroCategoria} exact />
       {/* <Route  component={<div>Erro</div>}  /> */}
-      
-      
-
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
