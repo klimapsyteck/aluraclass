@@ -14,7 +14,7 @@ ReactDOM.render(
       <Route path="/" component={Home} exact />
       <Route path="/cadastro/video" component={CadastroVideo} exact />
       <Route path="/cadastro/categoria" component={CadastroCategoria} exact />
-      <Route  component={<div>Erro</div>}  />
+      {/* <Route  component={<div>Erro</div>}  /> */}
       
       
 
