@@ -1,12 +1,12 @@
 import React from 'react';
-import Menu from './componente/Menu';
-import dadosIniciais from './data/dados_iniciais.json';
-import BannerMain from './componente/BannerMain';
-import Carousel from './componente/Carousel';
-import Footer from './componente/Footer';
+import Menu from '../../componente/Menu';
+import dadosIniciais from '../../data/dados_iniciais.json';
+import BannerMain from '../../componente/BannerMain';
+import Carousel from '../../componente/Carousel';
+import Footer from '../../componente/Footer';
 
 
-function App() {
+function Home() {
   return (
     <div >
       <Menu />
@@ -42,8 +42,10 @@ function App() {
           category={dadosIniciais.categorias[5]} 
        />
 
+       <Footer/>
+
     </div>
   );
 }
 
-export default App;
+export default Home;
