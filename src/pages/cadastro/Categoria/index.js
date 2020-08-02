@@ -60,9 +60,7 @@ function CadastroCategoria() {
   return (
     <PageDefault>
       <h1>
-        Cadastro de Categoria:
-        {values.nome}
-      </h1>
+        Cadastro de Categoria: {values.nome}  </h1>
 
       <form onSubmit={function handleSubmit(infosDoEvento) {
         infosDoEvento.preventDefault();
@@ -71,8 +69,7 @@ function CadastroCategoria() {
           values,
         ]);
         setValues(valoresIniciais);
-      }}
-      >
+      }} >
 
         <FormField
           label="Nome da Categoria: "
@@ -106,8 +103,8 @@ function CadastroCategoria() {
     
     {/* Jogando a lista de categorias cadastradas na tela */}
       <ul>
-        {categorias.map((categoria,indice) => (
-          <li key={`${categoria}${indice}`}>
+        {categorias.map((categoria) => (
+          <li key={`${categoria.titulo}`}>
             {categoria.titulo}
           </li>
         ))}
