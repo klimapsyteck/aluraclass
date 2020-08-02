@@ -41,7 +41,7 @@ function CadastroCategoria() {
           }
           throw new Error('Não foi possível pegar os dados');
         });
-    }else{
+    }else if (window.location.href.includes('aluraclass')) {
       const URL = 'http://aluraclass.herokuapp.com/categorias';
       fetch(URL)
         .then(async (respostaDoServer) => {
