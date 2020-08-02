@@ -17,6 +17,15 @@
           "text": "Formação de Front End na Alura",
           "url": "https://www.alura.com.br/cursos-online-front-end"
         }
+      },
+      {
+        "id": 3,
+        "titulo": "Back end && front end",
+        "cor": "#6BD1FF",
+        "link_extra": {
+          "text": "Formação de Front End na Alura",
+          "url": "https://www.alura.com.br/cursos-online-front-end"
+        }
       }
      ],
     "videos": [
