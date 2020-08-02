@@ -15,14 +15,13 @@
     "react-slick": "^0.27.1",
     "styled-components": "^5.1.1"
   },
-  "scripts": { 
-    "server": "node ./server.js" ,         
+  "scripts": {
+    "server": "node ./server.js",
     "dev": "concurrently \"react-scripts start\" \"node ./server.js\"",
-    "start": "npm run dev", 
+    "start": "npm run dev",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"    
-    
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
