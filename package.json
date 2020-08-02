@@ -15,8 +15,8 @@
     "react-slick": "^0.27.1",
     "styled-components": "^5.1.1"
   },
-  "scripts": {
-    "start": "node ./server.js",
+  "scripts": {    
+    "start": "npm run dev",
     "dev": "concurrently \"react-scripts start\" \"node ./server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
