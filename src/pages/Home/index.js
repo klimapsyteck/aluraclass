@@ -8,7 +8,7 @@ import Footer from '../../componente/Footer';
 
 function Home() {
   return (
-    <div >
+    <div>
       <Menu />
             
       <BannerMain 
