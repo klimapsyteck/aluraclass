@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../componente/PageDefault';
 import FormField from '../../../componente/FormField';
 import Button from '../../../componente/Button';
+import useForm from '../../../hooks/useForm';
+
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -11,62 +13,52 @@ function CadastroCategoria() {
     cor: '',
   };
 
+  const {handleChange, values, clearForm} = useForm(valoresIniciais);
+
   const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
+  
 
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  }
-
-  function handleChange(infosDoEvento) {
-    // const { getAttribute, value} = infosDoEvento.target;
-    setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
-
-  useEffect(() => {
-    if (window.location.href.includes('localhost')) {
-      const URL =  'http://localhost:8080/categorias';
-      fetch(URL)
-        .then(async (respostaDoServer) => {
-          if (respostaDoServer.ok) {
-            const resposta = await respostaDoServer.json();
-            setCategorias(resposta);
-            return;
-          }
-          throw new Error('Não foi possível pegar os dados');
-        });
-    }else {
-      const URL = 'https://aluraclass.herokuapp.com/categorias';
-      fetch(URL)
-        .then(async (respostaDoServer) => {
-          if (respostaDoServer.ok) {
-            const resposta = await respostaDoServer.json();
-            setCategorias(resposta);
-            return;
-          }
-          throw new Error('Não foi possível pegar os dados');
-        });
-    }
-    
-  }, []);
+  
+  // feito pela imersão com minha alteração
   // useEffect(() => {
-  //   const URL = window.location.hostname.includes('localhost')
-  //     ? 'http://localhost:8080/categorias'
-  //     : 'https://devsoutinhoflix.herokuapp.com/categorias';
-  //   fetch(URL)
-  //     .then(async (respostaDoServidor) => {
-  //       const resposta = await respostaDoServidor.json();
-  //       setCategorias([
-  //         ...resposta,
-  //       ]);
-  //   });
-  // });
+  //   if (window.location.href.includes('localhost')) {
+  //     const URL =  'http://localhost:8080/categorias';
+  //     fetch(URL)
+  //       .then(async (respostaDoServer) => {
+  //         if (respostaDoServer.ok) {
+  //           const resposta = await respostaDoServer.json();
+  //           setCategorias(resposta);
+  //           return;
+  //         }
+  //         throw new Error('Não foi possível pegar os dados');
+  //       });
+  //   }else {
+  //     const URL = 'https://aluraclass.herokuapp.com/categorias';
+  //     fetch(URL)
+  //       .then(async (respostaDoServer) => {
+  //         if (respostaDoServer.ok) {
+  //           const resposta = await respostaDoServer.json();
+  //           setCategorias(resposta);
+  //           return;
+  //         }
+  //         throw new Error('Não foi possível pegar os dados');
+  //       });
+  //   }
+    
+  // }, []);
+  // feito na aula gravada
+  useEffect(() => {
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://devsoutinhoflix.herokuapp.com/categorias';
+    fetch(URL)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        setCategorias([
+          ...resposta,
+        ]);
+    });
+  });
 
   return (
     <PageDefault>
@@ -79,7 +71,7 @@ function CadastroCategoria() {
           ...categorias,
           values,
         ]);
-        setValues(valoresIniciais);
+        clearForm();
       }} >
 
         <FormField
