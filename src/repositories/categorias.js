@@ -22,6 +22,7 @@ import config from '../config';
 
           });       
   }
+  
 
     // End my function to create a category
 
@@ -56,4 +57,5 @@ import config from '../config';
         getAllWithVideos,
         getAll,
         create,
+        
     };

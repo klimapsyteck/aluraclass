@@ -9,12 +9,7 @@ import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
   const history = useHistory();
-  const valoresIniciais = {
-    nome: '',
-    descricao: '',
-    cor: '',
-    url: '',
-  };
+ 
 
   // const {handleChange, values, clearForm} = useForm(valoresIniciais);
   const {handleChange, values, clearForm} = useForm({
